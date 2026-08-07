@@ -1,0 +1,434 @@
+
+.footer {
+  font-family: var(--font-family);
+  background-color: #f4f5f7;
+  color: var(--text-color);
+  border-top: 1px solid #e7e9ee;
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+}
+
+/* ---------- Newsletter ---------- */
+
+.newsletterWrap {
+  padding: 40px 48px;
+}
+
+.newsletterText {
+  max-width: 460px;
+}
+
+.newsletterTitle {
+  font-size: 22px;
+  font-weight: 700;
+  color: #171a21;
+  margin: 0 0 8px 0;
+}
+
+.newsletterSubtitle {
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--text-color);
+  margin: 0;
+}
+
+.newsletterForm {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 8px;
+  width: 100%;
+  max-width: 460px;
+}
+
+.inputRow {
+  display: flex;
+  width: 100%;
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: var(--box-shadow-2);
+}
+
+.inputWrap {
+  position: relative;
+  flex: 1;
+  background: var(--bg-white);
+  display: flex;
+  align-items: center;
+}
+
+.inputIcon {
+  position: absolute;
+  left: 16px;
+  color: #a9afbc;
+  pointer-events: none;
+}
+
+.emailInput {
+  width: 100%;
+  border: none;
+  outline: none;
+  padding: 14px 16px 14px 44px;
+  font-family: var(--font-family);
+  font-size: 14px;
+  color: var(--text-color);
+  background: transparent;
+}
+
+.emailInput::placeholder {
+  color: #a9afbc;
+}
+
+.sendBtn {
+  border: none;
+  cursor: pointer;
+  background-color: var(--primary-color);
+  color: var(--color-white);
+  font-family: var(--font-family);
+  font-weight: 600;
+  font-size: 13px;
+  letter-spacing: 0.03em;
+  padding: 0 28px;
+  transition: background-color 0.2s ease, opacity 0.2s ease;
+}
+
+.sendBtn:hover {
+  opacity: 0.92;
+}
+
+.consentText {
+  font-size: 12.5px;
+  color: var(--text-color);
+  margin: 0;
+  text-align: right;
+}
+
+.link {
+  color: var(--primary-color);
+  text-decoration: none;
+}
+
+.link:hover {
+  text-decoration: underline;
+}
+
+/* ---------- Divider ---------- */
+
+.divider {
+  height: 1px;
+  background-color: #e2e4ea;
+  margin: 0 48px;
+}
+
+.columnsWrap {
+  padding: 40px 48px;
+}
+
+.column {
+  min-width: 0;
+}
+
+.columnTitle {
+  font-size: 15px;
+  font-weight: 700;
+  color: #171a21;
+  margin: 0 0 18px 0;
+}
+
+.linkList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.footerLink {
+  color: var(--text-color);
+  text-decoration: none;
+  font-size: 14px;
+  transition: color 0.15s ease;
+}
+
+.footerLink:hover {
+  color: var(--primary-color);
+}
+
+/* --  help -- */
+
+.helpDesc {
+  font-size: 13.5px;
+  line-height: 1.6;
+  color: var(--text-color);
+  margin: 0 0 24px 0;
+}
+
+.contactRow {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 18px;
+  margin-top: 20px;
+}
+
+.contactIcon {
+  width: 34px;
+  height: 34px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: var(--color-white);
+  box-shadow: var(--box-shadow-2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--primary-color);
+}
+
+.contactLabel {
+  font-size: 12.5px;
+  color: var(--text-color);
+  margin: 0 0 2px 0;
+}
+
+.contactValue {
+  font-size: 15px;
+  font-weight: 700;
+  color: #171a21;
+  margin: 0;
+}
+
+/* -- Download app -- */
+.appRow {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.storeBadge {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--color-black);
+  color: var(--color-white);
+  border-radius: 8px;
+  padding: 6px 14px 6px 10px;
+  text-decoration: none;
+  min-width: 132px;
+}
+
+.storeBadgeIconGoogle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.storeBadgeIconApple {
+  width: 22px;
+  height: 22px;
+  flex-shrink: 0;
+  display: inline-block;
+  background-color: var(--color-white);
+  -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 384 512'%3E%3Cpath d='M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z'/%3E%3C/svg%3E");
+  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 384 512'%3E%3Cpath d='M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z'/%3E%3C/svg%3E");
+  mask-size: contain;
+  -webkit-mask-size: contain;
+  mask-repeat: no-repeat;
+  -webkit-mask-repeat: no-repeat;
+  mask-position: center;
+  -webkit-mask-position: center;
+}
+
+.storeBadgeText {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.15;
+}
+
+.storeBadgeSmall {
+  font-size: 8.5px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  opacity: 0.9;
+}
+
+.storeBadgeBig {
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+}
+
+.appDiscount {
+  font-size: 12px;
+  color: var(--text-color);
+  line-height: 1.4;
+}
+
+.followTitle {
+  font-size: 14px;
+  font-weight: 700;
+  color: #171a21;
+  margin: 20px 0 12px 0;
+}
+
+.socialRow {
+  display: flex;
+  gap: 10px;
+}
+
+.socialIcon {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: var(--color-white);
+  box-shadow: var(--box-shadow-2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #171a21;
+  text-decoration: none;
+  transition: color 0.15s ease, transform 0.15s ease;
+}
+
+.socialIcon:hover {
+  color: var(--primary-color);
+  transform: translateY(-2px);
+}
+
+/* ---------- Bottom bar ---------- */
+
+.bottomBar {
+  padding: 20px 48px;
+}
+
+.copyright {
+  font-size: 13px;
+  color: var(--text-color);
+  margin: 0;
+  white-space: nowrap;
+}
+
+.paymentRow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.paymentBadge {
+  height: 32px;
+  min-width: 44px;
+  padding: 0 10px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--color-white);
+  box-shadow: var(--box-shadow-2);
+}
+
+.badgePaytm {
+  background: var(--color-white);
+  color: #002e6e;
+  border-radius: 50%;
+  width: 32px;
+  padding: 0;
+}
+
+.badgePhonepe {
+  background: var(--color-2);
+}
+
+.badgeUpi {
+  background: var(--color-white);
+  color: var(--text-color);
+  border: 1px solid #d8dae1;
+}
+
+.badgeCard {
+  background: var(--color-white);
+  color: #f5a623;
+  border: 1px solid #d8dae1;
+}
+
+.badgeCod {
+  background: #1a7fa0;
+}
+
+.badgeMobikwik {
+  background: var(--color-black);
+}
+
+.badgeFreecharge {
+  background: var(--color-white);
+  color: var(--color-3);
+  border: 1px solid #d8dae1;
+}
+
+.badgeArrow {
+  background: var(--primary-color);
+  color: var(--color-white);
+  border-radius: 50%;
+  width: 32px;
+  padding: 0;
+}
+
+.bottomLinks {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.bottomLink {
+  font-size: 13px;
+  color: #171a21;
+  text-decoration: underline;
+  white-space: nowrap;
+}
+
+.bottomLink:hover {
+  color: var(--primary-color);
+}
+
+
+@media (max-width: 900px) {
+  .consentText {
+    text-align: left;
+  }
+
+  .newsletterForm {
+    align-items: stretch;
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 720px) {
+  .newsletterWrap,
+  .columnsWrap,
+  .bottomBar {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+
+  .divider {
+    margin: 0 24px;
+  }
+}
+
+@media (max-width: 480px) {
+  .inputRow {
+    flex-direction: column;
+  }
+
+  .sendBtn {
+    padding: 12px;
+  }
+}
