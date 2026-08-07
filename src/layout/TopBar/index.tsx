@@ -1,13 +1,13 @@
 import TopBar from "./TopBar";
-import Header from "./Header"
+import HeaderMain from "./HeaderMain"
 
-const HeaderMain=()=>
+const Header=()=>
 {
     return(
         <>
         <TopBar/>
-        <Header/>
+        <HeaderMain/>
         </>
     )
 }
-export default HeaderMain;
+export default Header;

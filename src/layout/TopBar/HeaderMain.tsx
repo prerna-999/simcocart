@@ -183,7 +183,7 @@ const menuSections: MenuSection[] = [
   },
 ];
 
-const Header = () => {
+const HeaderMain = () => {
   const [showSidebar, setShowSidebar] = useState(false);
   const [isClosing, setIsClosing] = useState(false);
 
@@ -375,4 +375,4 @@ const Header = () => {
   );
 };
 
-export default Header;
+export default HeaderMain;
