@@ -664,6 +664,6 @@
 
 @media (max-width: 990px) {
   .top-header {
-    display: none;
+    display: none !important;
   }
 }
