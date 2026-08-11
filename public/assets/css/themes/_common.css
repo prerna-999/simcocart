@@ -1,6 +1,7 @@
 :root {
      --font-family: "Jost", sans-serif;
     --bg-white: #fff;
+    --bg-2:#EFECEC;
     --text-color: #6b7385;
     --primary-color: #5293F7;
     --color-white: #fff;
@@ -1843,43 +1844,117 @@ body{
 
 
 
-/* ================= Shop Now Button  ================= */
-.hero-home__shop-btn {
+/* ShopButton.css - isolated button styles */
+
+.shopBtn {
   display: inline-flex;
   align-items: center;
-  height: 52px;
-  border-radius: 999px;
-  overflow: hidden;
-  text-decoration: none;
-  padding: 4px 4px 4px 26px;
-  background: linear-gradient(90deg, var(--color-3) 0%, var(--color-1) 50%, var(--color-4) 100%);
-  box-shadow: var(--box-shadow-2);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
+  justify-content: center;
+  gap: 6px;
 
-.hero-home__shop-btn:hover {
-  transform: translateY(-2px);
-  box-shadow: var(--box-shadow);
-}
+  width: auto;
+  margin: 0 auto;
 
-.hero-home__shop-btn-label {
-  display: flex;
-  align-items: center;
+  border: none;
+  outline: none;
+  cursor: pointer;
+
+  padding: 6px 20px;
+
+  border-radius: 10px;
+
+  font-size: 15px;
+  font-weight: 500;
+
   color: var(--color-white);
-  font-family: var(--font-family);
-  font-weight: 800;
-  font-size: 16px;
-  letter-spacing: 0.5px;
-  padding-right: 14px;
+
+  background: linear-gradient(
+    90deg,
+    #3b6df0 0%,
+    #e8467c 100%
+  );
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    background-position 0.4s ease;
+
+  background-size: 200% 100%;
+  background-position: left center;
+
+  position: relative;
+  overflow: hidden;
 }
 
-.hero-home__shop-btn-icon {
-  height: 44px;
-  width: 44px;
-  border-radius: 50%;
-  display: flex;
+/* Hover Animation */
+.shopBtn:hover {
+  transform: translateY(-3px);
+
+  box-shadow:
+    0 8px 18px rgba(59, 109, 240, 0.35);
+
+  background-position: right center;
+
+  color: var(--color-white);
+}
+
+/* Click */
+.shopBtn:active {
+  transform: translateY(-1px) scale(0.98);
+}
+
+/* Arrow Circle */
+.shopBtnArrow {
+  display: inline-flex;
+
   align-items: center;
   justify-content: center;
-  background: var(--color-black);
+
+  width: 25px;
+  height: 25px;
+
   flex-shrink: 0;
+
+  border-radius: 50%;
+
+  background-color: var(--color-black);
+
+  font-size: 11px;
+  line-height: 1;
+
+  margin-left: 10px;
+
+  transition:
+    transform 0.3s ease,
+    background-color 0.3s ease;
+}
+
+/* Arrow Animation */
+.shopBtn:hover .shopBtnArrow {
+  transform: translateX(5px) rotate(-5deg);
+
+  background-color: var(--color-black);
+}
+
+/* Arrow SVG */
+.shopBtnArrow svg {
+  transition: transform 0.3s ease;
+}
+
+.shopBtn:hover .shopBtnArrow svg {
+  transform: translateX(2px);
+}
+
+/* Mobile */
+@media (max-width: 576px) {
+  .shopBtn {
+    font-size: 15px;
+    padding: 10px 15px;
+  }
+
+  .shopBtnArrow {
+    width: 25px;
+    height: 25px;
+    margin-left: 8px;
+  }
 }
