@@ -471,3 +471,412 @@
     font-size: 13px;
   }
 }
+
+
+/* brand show case */
+/* Uses the :root design tokens already declared elsewhere in the project:
+   --font-family, --bg-white, --bg-2, --text-color, --primary-color,
+   --color-white, --color-black, etc. Not redeclared here. */
+
+/* brand show case */
+.brands-showcase {
+  width: 100%;
+  font-family: var(--font-family);
+  background: var(--bg-white);
+  padding: 40px 24px;
+  box-sizing: border-box;
+}
+
+.brands-showcase__header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 24px;
+  max-width: 1200px;
+  margin: 0 auto 24px;
+}
+
+.brands-showcase__heading {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.brands-showcase__title {
+  margin: 0;
+  font-size: 26px;
+  font-weight: 700;
+  color: var(--color-black);
+}
+
+.brands-showcase__subtitle {
+  margin: 0;
+  font-size: 14px;
+  color: var(--text-color);
+  max-width: 480px;
+}
+
+.brands-showcase__controls {
+  display: flex;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+.brands-showcase__nav-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: none;
+  background: var(--bg-2);
+  color: var(--color-black);
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease, transform 0.15s ease;
+}
+
+.brands-showcase__nav-btn:hover:not(:disabled) {
+  background: var(--primary-color);
+  color: var(--color-white);
+  transform: translateY(-1px);
+}
+
+.brands-showcase__nav-btn:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.brands-showcase__nav-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.brands-showcase__panel {
+  max-width: 1200px;
+  margin: 0 auto;
+  background: var(--bg-2);
+  border-radius: 16px;
+  padding: 32px 8px;
+}
+
+.brands-showcase__viewport {
+  overflow: hidden;
+  width: 100%;
+}
+
+.brands-showcase__track {
+  display: flex;
+  transition: transform 0.4s ease;
+  will-change: transform;
+}
+
+.brand-card {
+  box-sizing: border-box;
+  padding: 0 24px;
+  position: relative;
+}
+
+.brand-card::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 8px;
+  bottom: 8px;
+  border-left: 1px dashed rgba(0, 0, 0, 0.15);
+}
+
+.brand-card:first-child::before {
+  display: none;
+}
+
+.brand-card__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.brand-card__logo-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  height: 80px;
+  width: 100%;
+}
+
+.brand-card__logo {
+  max-height: 72px;
+  max-width: 100%;
+  object-fit: contain;
+}
+
+
+.brand-card__logo--text {
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  color: var(--color-black);
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.brand-card__name {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--color-black);
+}
+
+.brand-card__rating {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.brand-card__stars {
+  display: flex;
+  gap: 2px;
+}
+
+.brand-star {
+  fill: none;
+  stroke: #ffb400;
+  stroke-width: 1.2px;
+}
+
+.brand-star--filled {
+  fill: #ffb400;
+  stroke: #ffb400;
+}
+
+.brand-card__count {
+  font-size: 13px;
+  color: var(--text-color);
+}
+
+
+@media (max-width: 1023px) {
+  .brands-showcase__header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 639px) {
+  .brands-showcase {
+    padding: 28px 16px;
+  }
+
+  .brands-showcase__title {
+    font-size: 22px;
+  }
+
+  .brand-card {
+    padding: 0 14px;
+  }
+
+  .brand-card__logo-wrap {
+    height: 60px;
+  }
+}
+
+/* Uses the :root design tokens already declared elsewhere in the project:
+   --font-family, --bg-white, --bg-2, --text-color, --primary-color,
+   --color-white, --color-black, --color-1..5, --box-shadow-2. Not redeclared here. */
+
+.offers-showcase {
+  width: 100%;
+  font-family: var(--font-family);
+  background: var(--bg-white);
+  padding: 40px 24px;
+  box-sizing: border-box;
+}
+
+.offers-showcase__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  max-width: 1200px;
+  margin: 0 auto 20px;
+}
+
+.offers-showcase__title {
+  margin: 0;
+  font-size: 26px;
+  font-weight: 700;
+  color: var(--color-black);
+}
+
+.offers-showcase__controls {
+  display: flex;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+.offers-showcase__nav-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: none;
+  background: var(--bg-2);
+  color: var(--color-black);
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease, transform 0.15s ease;
+}
+
+.offers-showcase__nav-btn:hover:not(:disabled) {
+  background: var(--primary-color);
+  color: var(--color-white);
+  transform: translateY(-1px);
+}
+
+.offers-showcase__nav-btn:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.offers-showcase__nav-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.offers-showcase__viewport {
+  overflow: hidden;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.offers-showcase__track {
+  display: flex;
+  transition: transform 0.4s ease;
+  will-change: transform;
+}
+
+.offer-card-wrap {
+  box-sizing: border-box;
+  padding: 0 10px;
+}
+
+.offer-card {
+  display: flex;
+  flex-direction: column;
+  border-radius: 14px;
+  overflow: hidden;
+  background: var(--color-white);
+  box-shadow: var(--box-shadow-2);
+  height: 100%;
+}
+
+.offer-card__top {
+  position: relative;
+  padding: 18px 18px 22px;
+  background: linear-gradient(180deg, var(--color-white) 0%, var(--bg-2) 100%);
+  min-height: 130px;
+  overflow: hidden;
+}
+
+.offer-card__discount {
+  margin: 0 0 4px;
+  font-size: 17px;
+  font-weight: 800;
+  color: var(--color-5);
+  letter-spacing: 0.01em;
+}
+
+.offer-card__condition {
+  margin: 0 0 2px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--color-black);
+}
+
+.offer-card__validity {
+  margin: 0;
+  font-size: 12px;
+  color: var(--text-color);
+}
+
+.offer-card__illustration {
+  position: absolute;
+  right: 6px;
+  bottom: 0;
+  width: 92px;
+  height: 92px;
+  pointer-events: none;
+}
+
+.offer-card__footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 12px 16px;
+}
+
+.offer-card__footer--warm {
+  background: linear-gradient(90deg, var(--color-3) 0%, var(--color-5) 100%);
+}
+
+.offer-card__footer--blue {
+  background: linear-gradient(90deg, var(--primary-color) 0%, var(--color-4) 100%);
+}
+
+.offer-card__footer--red {
+  background: linear-gradient(90deg, var(--color-5) 0%, var(--color-3) 100%);
+}
+
+.offer-card__footer--sky {
+  background: linear-gradient(90deg, var(--color-4) 0%, var(--primary-color) 100%);
+}
+
+.offer-card__code {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--color-white);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.offer-card__copy-btn {
+  flex-shrink: 0;
+  border: none;
+  border-radius: 20px;
+  padding: 6px 14px;
+  font-size: 11px;
+  font-weight: 700;
+  font-family: var(--font-family);
+  color: var(--color-white);
+  background: rgba(255, 255, 255, 0.28);
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.15s ease;
+}
+
+.offer-card__copy-btn:hover {
+  background: rgba(255, 255, 255, 0.42);
+  transform: translateY(-1px);
+}
+
+.offer-card__copy-btn:active {
+  transform: translateY(0);
+}
+
+/* Responsive */
+@media (max-width: 639px) {
+  .offers-showcase {
+    padding: 28px 16px;
+  }
+
+  .offers-showcase__title {
+    font-size: 22px;
+  }
+
+  .offer-card__illustration {
+    width: 72px;
+    height: 72px;
+  }
+}

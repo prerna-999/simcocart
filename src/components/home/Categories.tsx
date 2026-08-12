@@ -1,12 +1,7 @@
 "use client";
-
 import React, { useRef } from "react";
 import { Container } from "react-bootstrap";
-import {
-  FiChevronLeft,
-  FiChevronRight,
-  FiArrowRight,
-} from "react-icons/fi";
+import { FiChevronLeft,FiChevronRight,FiArrowRight,} from "react-icons/fi";
 import Image from "next/image";
 
 export interface Category {
