@@ -263,7 +263,7 @@
   height: 40px;
   border-radius: 50%;
   border: none;
-  background: var(--primary-color);
+   background: var(--hero-gradient);
   color: var(--color-black);
   display: flex;
   align-items: center;
