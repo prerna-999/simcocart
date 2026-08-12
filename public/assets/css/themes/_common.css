@@ -1846,7 +1846,7 @@ body{
 
 /* ShopButton.css - isolated button styles */
 
-.shopBtn {
+/* .shopBtn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -1884,10 +1884,10 @@ body{
 
   position: relative;
   overflow: hidden;
-}
+} */
 
 /* Hover Animation */
-.shopBtn:hover {
+/* .shopBtn:hover {
   transform: translateY(-3px);
 
   box-shadow:
@@ -1896,15 +1896,15 @@ body{
   background-position: right center;
 
   color: var(--color-white);
-}
+} */
 
 /* Click */
-.shopBtn:active {
+/* .shopBtn:active {
   transform: translateY(-1px) scale(0.98);
-}
+} */
 
 /* Arrow Circle */
-.shopBtnArrow {
+/* .shopBtnArrow {
   display: inline-flex;
 
   align-items: center;
@@ -1927,26 +1927,26 @@ body{
   transition:
     transform 0.3s ease,
     background-color 0.3s ease;
-}
+} */
 
 /* Arrow Animation */
-.shopBtn:hover .shopBtnArrow {
+/* .shopBtn:hover .shopBtnArrow {
   transform: translateX(5px) rotate(-5deg);
 
   background-color: var(--color-black);
-}
+} */
 
 /* Arrow SVG */
-.shopBtnArrow svg {
+/* .shopBtnArrow svg {
   transition: transform 0.3s ease;
 }
 
 .shopBtn:hover .shopBtnArrow svg {
   transform: translateX(2px);
-}
+} */
 
 /* Mobile */
-@media (max-width: 576px) {
+/* @media (max-width: 576px) {
   .shopBtn {
     font-size: 15px;
     padding: 10px 15px;
@@ -1957,4 +1957,35 @@ body{
     height: 25px;
     margin-left: 8px;
   }
+} */
+
+.shop-now-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  width: auto;
+  padding: 8px 18px;
+  border: none;
+  border-radius: 20px;
+  background: linear-gradient(90deg, var(--color-4) 0%, var(--color-5) 100%);
+  color: var(--color-white);
+  font-family: var(--font-family);
+  font-weight: 600;
+  font-size: 13px;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.shop-now-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--box-shadow-2);
+}
+
+.shop-now-btn__icon {
+  background: var(--color-black);
+  color: var(--color-white);
+  border-radius: 50%;
+  padding: 3px;
+  font-size: 14px;
 }

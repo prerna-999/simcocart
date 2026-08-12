@@ -1,166 +1,103 @@
 "use client";
-import React, { useRef } from "react";
-import { Container } from "react-bootstrap";
-import { FiChevronLeft,FiChevronRight,FiArrowRight,} from "react-icons/fi";
-import Image from "next/image";
 
-export interface Category {
+import React, { useRef } from "react";
+import Image from "next/image";
+import { Container, Row, Col } from "react-bootstrap";
+import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
+
+
+interface Category {
   id: number;
   title: string;
-  src: string;
+  image: string;
 }
 
 const categories: Category[] = [
-  {
-    id: 1,
-    title: "Men Clothing",
-    src: "/assets/img/all-images/home/categories1.jpg",
-  },
-  {
-    id: 2,
-    title: "Women Clothing",
-    src: "/assets/img/all-images/home/categories1.jpg",
-  },
-  {
-    id: 3,
-    title: "Electronics",
-    src: "/assets/img/all-images/home/categories1.jpg",
-  },
-  {
-    id: 4,
-    title: "Toys & Stationery",
-    src: "/assets/img/all-images/home/categories1.jpg",
-  },
-  {
-    id: 5,
-    title: "Footwear",
-    src: "/assets/img/all-images/home/categories1.jpg",
-  },
-  {
-    id: 6,
-    title: "Beauty Wellness & More",
-    src: "/assets/img/all-images/home/categories1.jpg",
-  },
-  {
-    id: 7,
-    title: "Toys & Stationery",
-    src: "/assets/img/all-images/home/categories1.jpg",
-  },
-  {
-    id: 8,
-    title: "Footwear",
-    src: "/assets/img/all-images/home/categories1.jpg",
-  },
-  {
-    id: 9,
-    title: "Toys & Stationery",
-    src: "/assets/img/all-images/home/categories1.jpg",
-  },
-  {
-    id: 10,
-    title: "Footwear",
-    src: "/assets/img/all-images/home/categories1.jpg",
-  },
+  { id: 1, title: "Men Clothing", image: "/assets/img/all-images/home/categories.avif" },
+  { id: 2, title: "Women Clothing", image: "/assets/img/all-images/home/categories1.avif" },
+  { id: 3, title: "Electronics", image: "/assets/img/all-images/home/categories2.avif" },
+  { id: 4, title: "Toys & Stationery", image: "/assets/img/all-images/home/categories3.avif" },
+  { id: 5, title: "Footwear", image: "/assets/img/all-images/home/categories.avif" },
+  { id: 6, title: "Beauty Wellness", image: "/assets/img/all-images/home/categories1.avif" },
+   { id: 7, title: "Electronics", image: "/assets/img/all-images/home/categories2.avif" },
+  { id: 8, title: "Toys & Stationery", image: "/assets/img/all-images/home/categories3.avif" },
+  { id: 9, title: "Footwear", image: "/assets/img/all-images/home/categories.avif" },
+  { id: 10, title: "Beauty Wellness", image: "/assets/img/all-images/home/categories1.avif" },
 ];
 
 const Categories: React.FC = () => {
   const trackRef = useRef<HTMLDivElement>(null);
 
-  const scrollByAmount = (direction: "prev" | "next") => {
+  const scrollByCard = (direction: "left" | "right") => {
     const track = trackRef.current;
-
     if (!track) return;
 
-    const firstSlide =
-      track.querySelector<HTMLDivElement>(".carouselSlide");
+    const card = track.querySelector<HTMLDivElement>(".shop-cat-card");
+    if (!card) return;
 
-    const slideWidth = firstSlide
-      ? firstSlide.offsetWidth
-      : track.clientWidth;
+    const cardWidth = card.getBoundingClientRect().width;
+    const gap = parseFloat(getComputedStyle(track).columnGap || "0");
+    const scrollAmount = cardWidth + gap;
 
     track.scrollBy({
-      left: direction === "next" ? slideWidth : -slideWidth,
+      left: direction === "left" ? -scrollAmount : scrollAmount,
       behavior: "smooth",
     });
   };
 
   return (
-    <Container className="categoriesSection">
-      {/* Header */}
-      <div className="categoriesHeader">
-        <h2 className="categoriesTitle">
-          Shop by Categories
-        </h2>
+    <section className="shop-cat-section">
+      <Container fluid className="shop-cat-container">
+        <Row className="shop-cat-header align-items-center">
+          <Col xs={6}>
+            <h2 className="shop-cat-title">Shop by Categories</h2>
+          </Col>
+          <Col xs={6} className="shop-cat-nav-col">
+            <button
+              type="button"
+              className="shop-cat-nav-btn"
+              aria-label="Scroll left"
+              onClick={() => scrollByCard("left")}
+            >
+              <FaChevronLeft />
+            </button>
+            <button
+              type="button"
+              className="shop-cat-nav-btn"
+              aria-label="Scroll right"
+              onClick={() => scrollByCard("right")}
+            >
+              <FaChevronRight />
+            </button>
+          </Col>
+        </Row>
 
-        <div className="arrowGroup">
-          <button
-            type="button"
-            className="arrowBtn"
-            aria-label="Previous"
-            onClick={() => scrollByAmount("prev")}
-          >
-            <FiChevronLeft size={18} />
-          </button>
+        <div className="shop-cat-track" ref={trackRef}>
+          {categories.map((cat) => (
+            <div className="shop-cat-card" key={cat.id}>
+              <p className="shop-cat-card__title">{cat.title}</p>
 
-          <button
-            type="button"
-            className="arrowBtn"
-            aria-label="Next"
-            onClick={() => scrollByAmount("next")}
-          >
-            <FiChevronRight size={18} />
-          </button>
-        </div>
-      </div>
-
-      {/* Carousel */}
-      <div
-        className="carouselViewport"
-        ref={trackRef}
-      >
-        {categories.map((category) => (
-          <div
-            className="carouselSlide"
-            key={category.id}
-          >
-            <div className="categoryCard">
-
-              {/* Background Image */}
-              <Image
-                src={category.src}
-                alt={category.title}
-                fill
-                sizes="(max-width: 576px) 100vw, (max-width: 991px) 50vw, 25vw"
-                className="categoryImage"
-              />
-
-              {/* Overlay Content */}
-              <div className="categoryOverlay">
-
-                {/* Category Title */}
-                <h3 className="categoryCardTitle">
-                  {category.title}
-                </h3>
-
-                {/* Shop Button */}
-                <button
-                  type="button"
-                  className="shopBtn"
-                >
-                  Shop Now
-
-                  <span className="shopBtnArrow">
-                    <FiArrowRight size={15} />
-                  </span>
-                </button>
-
+              <div className="shop-cat-card__media">
+                <Image
+                  src={cat.image}
+                  alt={cat.title}
+                  fill
+                  sizes="(max-width: 576px) 45vw, (max-width: 1024px) 22vw, 15vw"
+                  className="shop-cat-card__img"
+                />
               </div>
+
+              <button type="button" className="shop-now-btn">
+                <span>Shop Now</span>
+                <FaChevronRight className="shop-now-btn__icon" />
+              </button>
             </div>
-          </div>
-        ))}
-      </div>
-    </Container>
+          ))}
+        </div>
+      </Container>
+    </section>
   );
 };
 
 export default Categories;
+
