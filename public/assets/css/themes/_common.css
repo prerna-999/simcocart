@@ -1844,120 +1844,7 @@ body{
 
 
 
-/* ShopButton.css - isolated button styles */
-
-/* .shopBtn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 6px;
-
-  width: auto;
-  margin: 0 auto;
-
-  border: none;
-  outline: none;
-  cursor: pointer;
-
-  padding: 6px 20px;
-
-  border-radius: 10px;
-
-  font-size: 15px;
-  font-weight: 500;
-
-  color: var(--color-white);
-
-  background: linear-gradient(
-    90deg,
-    #3b6df0 0%,
-    #e8467c 100%
-  );
-
-  transition:
-    transform 0.3s ease,
-    box-shadow 0.3s ease,
-    background-position 0.4s ease;
-
-  background-size: 200% 100%;
-  background-position: left center;
-
-  position: relative;
-  overflow: hidden;
-} */
-
-/* Hover Animation */
-/* .shopBtn:hover {
-  transform: translateY(-3px);
-
-  box-shadow:
-    0 8px 18px rgba(59, 109, 240, 0.35);
-
-  background-position: right center;
-
-  color: var(--color-white);
-} */
-
-/* Click */
-/* .shopBtn:active {
-  transform: translateY(-1px) scale(0.98);
-} */
-
-/* Arrow Circle */
-/* .shopBtnArrow {
-  display: inline-flex;
-
-  align-items: center;
-  justify-content: center;
-
-  width: 25px;
-  height: 25px;
-
-  flex-shrink: 0;
-
-  border-radius: 50%;
-
-  background-color: var(--color-black);
-
-  font-size: 11px;
-  line-height: 1;
-
-  margin-left: 10px;
-
-  transition:
-    transform 0.3s ease,
-    background-color 0.3s ease;
-} */
-
-/* Arrow Animation */
-/* .shopBtn:hover .shopBtnArrow {
-  transform: translateX(5px) rotate(-5deg);
-
-  background-color: var(--color-black);
-} */
-
-/* Arrow SVG */
-/* .shopBtnArrow svg {
-  transition: transform 0.3s ease;
-}
-
-.shopBtn:hover .shopBtnArrow svg {
-  transform: translateX(2px);
-} */
-
-/* Mobile */
-/* @media (max-width: 576px) {
-  .shopBtn {
-    font-size: 15px;
-    padding: 10px 15px;
-  }
-
-  .shopBtnArrow {
-    width: 25px;
-    height: 25px;
-    margin-left: 8px;
-  }
-} */
+/* shop button */
 
 .shop-now-btn {
   display: inline-flex;
@@ -1988,4 +1875,30 @@ body{
   border-radius: 50%;
   padding: 3px;
   font-size: 14px;
+}
+
+
+/* simple  button */
+.cta-button {
+  display: inline-block;
+  width: fit-content;
+  padding: 14px 32px;
+  border: none;
+  border-radius: 8px;
+  background: linear-gradient(90deg, var(--color-3) 0%, var(--primary-color) 100%);
+  color: var(--color-white);
+  font-family: var(--font-family);
+  font-weight: 600;
+  font-size: 16px;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+
+.cta-button:hover {
+  opacity: 0.9;
+}
+
+.cta-button:focus-visible {
+  outline: 2px solid var(--primary-color);
+  outline-offset: 2px;
 }
