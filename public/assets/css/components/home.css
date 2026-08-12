@@ -263,7 +263,7 @@
   height: 40px;
   border-radius: 50%;
   border: none;
-   background: var(--hero-gradient);
+  background: var(--bg-2);
   color: var(--color-black);
   display: flex;
   align-items: center;
@@ -274,8 +274,8 @@
 }
 
 .shop-cat-nav-btn:hover {
-  background: var(--color-5);
-  color: var(--color-white);
+ background: var(--hero-gradient);
+ color: var(--color-white);
   transform: translateY(-2px);
 }
 
