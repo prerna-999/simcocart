@@ -1,4 +1,5 @@
 import React, { useRef, useState, useEffect } from "react";
+import { Container } from "react-bootstrap";
 
 interface Offer {
   id: number;
@@ -165,7 +166,8 @@ const BankWalletOffers: React.FC = () => {
 
   return (
     <section className="offers-showcase" aria-label="Bank and wallet offers">
-      <div className="offers-showcase__header">
+      <Container>
+          <div className="offers-showcase__header">
         <h2 className="offers-showcase__title">Bank &amp; Wallet Offers</h2>
 
         <div className="offers-showcase__controls">
@@ -232,6 +234,8 @@ const BankWalletOffers: React.FC = () => {
           ))}
         </div>
       </div>
+      </Container>
+
     </section>
   );
 };

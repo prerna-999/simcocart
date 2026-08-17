@@ -371,7 +371,6 @@
   align-items: flex-start;
   justify-content: space-between;
   gap: 24px;
-  max-width: 1200px;
   margin: 0 auto 24px;
 }
 
@@ -431,7 +430,6 @@
 }
 
 .brands-showcase__panel {
-  max-width: 1200px;
   margin: 0 auto;
   background: var(--bg-2);
   border-radius: 16px;
@@ -559,10 +557,6 @@
   }
 }
 
-/* Uses the :root design tokens already declared elsewhere in the project:
-   --font-family, --bg-white, --bg-2, --text-color, --primary-color,
-   --color-white, --color-black, --color-1..5, --box-shadow-2. Not redeclared here. */
-
 .offers-showcase {
   width: 100%;
   font-family: var(--font-family);
@@ -625,7 +619,7 @@
 .offers-showcase__viewport {
   overflow: hidden;
   width: 100%;
-  max-width: 1200px;
+  /* max-width: 1200px; */
   margin: 0 auto;
 }
 
