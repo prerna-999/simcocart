@@ -8,9 +8,6 @@
   box-shadow: var(--box-shadow-2);
 }
 
-.hero-slider .container {
-  height: 100%;
-}
 
 .hero-slider__track {
   display: flex;

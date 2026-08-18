@@ -1,238 +1,7 @@
-// "use client";
-
-// import Image from "next/image";
-// import { useCallback, useEffect, useRef, useState } from "react";
-
-// interface CarouselSlide {
-//   id: string;
-//   src: string;
-//   alt: string;
-// }
-
-// const heroSlides: CarouselSlide[] = [
-//   { id: "1", src: "/assets/img/all-images/home/banner1.png", alt: "Demo slide one" },
-//   { id: "2", src: "/assets/img/all-images/home/banner2.png", alt: "Demo slide two" },
-//   { id: "3", src: "/assets/img/all-images/home/banner3.png", alt: "Demo slide three" },
-//   { id: "4", src: "/assets/img/all-images/home/banner4.png", alt: "Demo slide four" },
-// ];
-
-// // Mobile/tablet 
-// const mobileHeroSlides: CarouselSlide[] = [
-//   { id: "1", src: "/assets/img/all-images/home/tablet-banner-1.png", alt: "Demo slide one" },
-//   { id: "2", src: "/assets/img/all-images/home/tablet-banner-2.png", alt: "Demo slide two" },
-//   { id: "3", src: "/assets/img/all-images/home/tablet-banner-3.png", alt: "Demo slide three" },
-//   { id: "4", src: "/assets/img/all-images/home/tablet-banner-4.png", alt: "Demo slide four" },
-// ];
-
-// interface HomeHeroProps {
-//   slides?: CarouselSlide[];
-//   mobileSlides?: CarouselSlide[];
-//   autoPlayInterval?: number;
-//   pauseOnHover?: boolean;
-// }
-
-// function HomeHero({
-//   slides = heroSlides,
-//   mobileSlides = mobileHeroSlides,
-//   autoPlayInterval = 1500,
-//   pauseOnHover = true,
-// }: HomeHeroProps) {
-//   const [activeIndex, setActiveIndex] = useState(0);
-//   const [isPaused, setIsPaused] = useState(false);
-//   const timerRef = useRef<ReturnType<typeof setInterval> | null>(null);
-//   const slideCount = slides.length;
-
-//   const goToNext = useCallback(() => {
-//     setActiveIndex((current) => (current + 1) % slideCount);
-//   }, [slideCount]);
-
-//   const goToPrevious = useCallback(() => {
-//     setActiveIndex((current) => (current - 1 + slideCount) % slideCount);
-//   }, [slideCount]);
-
-//   const goToSlide = useCallback((index: number) => {
-//     setActiveIndex(index);
-//   }, []);
-
-//   useEffect(() => {
-//     if (isPaused || slideCount <= 1) return;
-
-//     timerRef.current = setInterval(goToNext, autoPlayInterval);
-
-//     return () => {
-//       if (timerRef.current) clearInterval(timerRef.current);
-//     };
-//   }, [activeIndex, isPaused, goToNext, autoPlayInterval, slideCount]);
-
-//   const [mobileActiveIndex, setMobileActiveIndex] = useState(0);
-//   const mobileSlideCount = mobileSlides.length;
-//   const isFirstMobileSlide = mobileActiveIndex === 0;
-//   const isLastMobileSlide = mobileActiveIndex === mobileSlideCount - 1;
-
-//   const goToMobileNext = useCallback(() => {
-//     setMobileActiveIndex((current) =>
-//       current < mobileSlideCount - 1 ? current + 1 : current
-//     );
-//   }, [mobileSlideCount]);
-
-//   const goToMobilePrevious = useCallback(() => {
-//     setMobileActiveIndex((current) => (current > 0 ? current - 1 : current));
-//   }, []);
-
-//   const goToMobileSlide = useCallback((index: number) => {
-//     setMobileActiveIndex(index);
-//   }, []);
-
-//   return (
-//     <>
-//       <section
-//         className="hero-slider"
-//         aria-roledescription="carousel"
-//         aria-label="Featured highlights"
-//         onMouseEnter={() => pauseOnHover && setIsPaused(true)}
-//         onMouseLeave={() => pauseOnHover && setIsPaused(false)}
-//       >
-//         <div
-//           className="hero-slider__track"
-//           style={{ transform: `translateX(-${activeIndex * 100}%)` }}
-//         >
-//           {slides.map((slide, index) => (
-//             <div
-//               key={slide.id}
-//               className="hero-slider__slide"
-//               aria-hidden={index !== activeIndex}
-//               role="group"
-//               aria-roledescription="slide"
-//               aria-label={`${index + 1} of ${slideCount}`}
-//             >
-//               <Image
-//                 src={slide.src}
-//                 alt={slide.alt}
-//                 fill
-//                 priority={index === 0}
-//                 sizes="100vw"
-//                 className="hero-slider__image"
-//               />
-//             </div>
-//           ))}
-//         </div>
-
-//         <button
-//           type="button"
-//           className="hero-slider__arrow hero-slider__arrow--prev"
-//           onClick={goToPrevious}
-//           aria-label="Previous slide"
-//         >
-//           <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true">
-//             <path d="M15 6l-6 6 6 6" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-//           </svg>
-//         </button>
-
-//         <button
-//           type="button"
-//           className="hero-slider__arrow hero-slider__arrow--next"
-//           onClick={goToNext}
-//           aria-label="Next slide"
-//         >
-//           <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true">
-//             <path d="M9 6l6 6-6 6" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-//           </svg>
-//         </button>
-
-//         <div className="hero-slider__dots" role="tablist" aria-label="Choose slide">
-//           {slides.map((slide, index) => (
-//             <button
-//               key={slide.id}
-//               type="button"
-//               role="tab"
-//               aria-selected={index === activeIndex}
-//               aria-label={`Go to slide ${index + 1}`}
-//               className={`hero-slider__dot${index === activeIndex ? " hero-slider__dot--active" : ""}`}
-//               onClick={() => goToSlide(index)}
-//             />
-//           ))}
-//         </div>
-//       </section>
-
-//       <section
-//         className="hero-slider-mobile"
-//         aria-roledescription="carousel"
-//         aria-label="Featured highlights"
-//       >
-//         <div
-//           className="hero-slider-mobile__track"
-//           style={{ transform: `translateX(-${mobileActiveIndex * 100}%)` }}
-//         >
-//           {mobileSlides.map((slide, index) => (
-//             <div
-//               key={slide.id}
-//               className="hero-slider-mobile__slide"
-//               aria-hidden={index !== mobileActiveIndex}
-//               role="group"
-//               aria-roledescription="slide"
-//               aria-label={`${index + 1} of ${mobileSlideCount}`}
-//             >
-//               <Image
-//                 src={slide.src}
-//                 alt={slide.alt}
-//                 fill
-//                 priority={index === 0}
-//                 sizes="100vw"
-//                 className="hero-slider-mobile__image"
-//               />
-//             </div>
-//           ))}
-//         </div>
-
-//         <button
-//           type="button"
-//           className="hero-slider-mobile__arrow hero-slider-mobile__arrow--prev"
-//           onClick={goToMobilePrevious}
-//           aria-label="Previous slide"
-//           disabled={isFirstMobileSlide}
-//         >
-//           <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true">
-//             <path d="M15 6l-6 6 6 6" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-//           </svg>
-//         </button>
-
-//         <button
-//           type="button"
-//           className="hero-slider-mobile__arrow hero-slider-mobile__arrow--next"
-//           onClick={goToMobileNext}
-//           aria-label="Next slide"
-//           disabled={isLastMobileSlide}
-//         >
-//           <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true">
-//             <path d="M9 6l6 6-6 6" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-//           </svg>
-//         </button>
-
-//         <div className="hero-slider-mobile__dots" role="tablist" aria-label="Choose slide">
-//           {mobileSlides.map((slide, index) => (
-//             <button
-//               key={slide.id}
-//               type="button"
-//               role="tab"
-//               aria-selected={index === mobileActiveIndex}
-//               aria-label={`Go to slide ${index + 1}`}
-//               className={`hero-slider-mobile__dot${index === mobileActiveIndex ? " hero-slider-mobile__dot--active" : ""}`}
-//               onClick={() => goToMobileSlide(index)}
-//             />
-//           ))}
-//         </div>
-//       </section>
-//     </>
-//   );
-// }
-
-// export default HomeHero;
-
 "use client";
 
 import Image from "next/image";
 import { useCallback, useEffect, useRef, useState } from "react";
-import { Container } from "react-bootstrap";
 
 interface CarouselSlide {
   id: string;
@@ -323,68 +92,66 @@ function HomeHero({
         onMouseEnter={() => pauseOnHover && setIsPaused(true)}
         onMouseLeave={() => pauseOnHover && setIsPaused(false)}
       >
-        <Container>
-          <div
-            className="hero-slider__track"
-            style={{ transform: `translateX(-${activeIndex * 100}%)` }}
-          >
-            {slides.map((slide, index) => (
-              <div
-                key={slide.id}
-                className="hero-slider__slide"
-                aria-hidden={index !== activeIndex}
-                role="group"
-                aria-roledescription="slide"
-                aria-label={`${index + 1} of ${slideCount}`}
-              >
-                <Image
-                  src={slide.src}
-                  alt={slide.alt}
-                  fill
-                  priority={index === 0}
-                  sizes="100vw"
-                  className="hero-slider__image"
-                />
-              </div>
-            ))}
-          </div>
-
-          <button
-            type="button"
-            className="hero-slider__arrow hero-slider__arrow--prev"
-            onClick={goToPrevious}
-            aria-label="Previous slide"
-          >
-            <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true">
-              <path d="M15 6l-6 6 6 6" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-            </svg>
-          </button>
-
-          <button
-            type="button"
-            className="hero-slider__arrow hero-slider__arrow--next"
-            onClick={goToNext}
-            aria-label="Next slide"
-          >
-            <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true">
-              <path d="M9 6l6 6-6 6" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-            </svg>
-          </button>
-
-          <div className="hero-slider__dots" role="tablist" aria-label="Choose slide">
-            {slides.map((slide, index) => (
-              <button
-                key={slide.id}
-                type="button"
-                role="tab"
-                aria-selected={index === activeIndex}
-                aria-label={`Go to slide ${index + 1}`}
-                className={`hero-slider__dot${index === activeIndex ? " hero-slider__dot--active" : ""}`}
-                onClick={() => goToSlide(index)}
+        <div
+          className="hero-slider__track"
+          style={{ transform: `translateX(-${activeIndex * 100}%)` }}
+        >
+          {slides.map((slide, index) => (
+            <div
+              key={slide.id}
+              className="hero-slider__slide"
+              aria-hidden={index !== activeIndex}
+              role="group"
+              aria-roledescription="slide"
+              aria-label={`${index + 1} of ${slideCount}`}
+            >
+              <Image
+                src={slide.src}
+                alt={slide.alt}
+                fill
+                priority={index === 0}
+                sizes="100vw"
+                className="hero-slider__image"
               />
-            ))}
-          </div>
-        </Container>
+            </div>
+          ))}
+        </div>
+
+        <button
+          type="button"
+          className="hero-slider__arrow hero-slider__arrow--prev"
+          onClick={goToPrevious}
+          aria-label="Previous slide"
+        >
+          <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true">
+            <path d="M15 6l-6 6 6 6" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+          </svg>
+        </button>
+
+        <button
+          type="button"
+          className="hero-slider__arrow hero-slider__arrow--next"
+          onClick={goToNext}
+          aria-label="Next slide"
+        >
+          <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true">
+            <path d="M9 6l6 6-6 6" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+          </svg>
+        </button>
+
+        <div className="hero-slider__dots" role="tablist" aria-label="Choose slide">
+          {slides.map((slide, index) => (
+            <button
+              key={slide.id}
+              type="button"
+              role="tab"
+              aria-selected={index === activeIndex}
+              aria-label={`Go to slide ${index + 1}`}
+              className={`hero-slider__dot${index === activeIndex ? " hero-slider__dot--active" : ""}`}
+              onClick={() => goToSlide(index)}
+            />
+          ))}
+        </div>
       </section>
 
       <section

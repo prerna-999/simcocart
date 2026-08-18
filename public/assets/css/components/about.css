@@ -54,6 +54,7 @@
 /* ---- Stats row ---- */
 .about-banner-stats {
   margin: 28px 0 32px;
+  padding-top: 50px;
 }
 
 .about-banner-stat {
@@ -268,5 +269,220 @@
   .missionParagraph {
     font-size: 0.9rem;
     text-align: center;
+  }
+}
+
+
+/* core vaules sections  */
+
+.corevalues-section {
+  position: relative;
+  padding: 90px 0px;
+  overflow: hidden;
+}
+.corevalues-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right:0;
+  background-image: url("https://tiimg.tistatic.com/new_website1/design2022/ti-about/trust.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  opacity: 0.3; 
+  z-index: 0;
+}
+.corevalues-section > * {
+  position: relative;
+  z-index: 1;
+}
+
+.corevalues-margin{
+  margin:0px 40px;
+}
+
+.corevalues-heading {
+  text-align: center;
+  font-size: 36px;
+  font-weight: 700px;
+  color: var(--color-black);
+  position: relative;
+  padding-bottom: 16px;
+  margin-bottom: 60px;
+}
+.corevalues-heading::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 70px;
+  height: 3px;
+  background: var(--hero-gradient);
+  border-radius: 4px;
+}
+.corevalues-list {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+.corevalues-item-row {
+  align-items: stretch;
+  row-gap: 20px;
+}
+/* ---------- Image column ---------- */
+.corevalues-img-col {
+  display: flex;
+}
+.corevalues-image-wrap {
+  width: 100%;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: var(--box-shadow-2);
+}
+.corevalues-image {
+  width: 100%;
+  height: 100%;
+  min-height: 260px;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+}
+.corevalues-image-wrap:hover .corevalues-image {
+  transform: scale(1.05);
+}
+/* ---------- Text column ---------- */
+.corevalues-text-col {
+  display: flex;
+}
+.corevalues-text-card {
+  background-color: var(--color-white);
+  border-radius: 14px;
+  padding: 36px 34px;
+  box-shadow: var(--box-shadow-2);
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.corevalues-text-title {
+  display: block;
+  font-family: var(--font-family);
+  font-weight: 600;
+  font-size: 1.35rem;
+  margin-bottom: 14px;
+}
+.corevalues-text-desc {
+  font-family: var(--font-family);
+  color: var(--text-color);
+  font-size: 0.98rem;
+  line-height: 1.75;
+  margin-bottom: 0;
+}
+
+
+@media (max-width: 410px) {
+  .corevalues-margin{
+  margin:0px 0px !important;
+}
+}
+
+/* driving force */
+
+.driving-force-section {
+  padding: 80px 0;
+}
+
+.eyebrow-wrap {
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.title {
+  font-family: var(--font-family);
+  font-weight: 700;
+  font-size: 2.5rem;
+  color: var(--color-black);
+  margin-bottom: 12px;
+}
+
+.subtitle {
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 1.05rem;
+  color: var(--text-color);
+  margin: 0;
+}
+
+.force-card {
+  background: var(--bg-2);
+  border: 1px solid transparent;
+  border-radius: 16px;
+  padding: 40px 28px;
+  text-align: center;
+  height: 100%;
+  transition: border-color 0.25s ease, transform 0.25s ease;
+}
+
+.force-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--primary-color);
+}
+
+.force-card.active {
+  border-color: var(--primary-color);
+}
+
+.icon-wrap {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: rgba(82, 147, 247, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 24px;
+}
+
+.icon {
+  width: 1.6rem;
+  height: 1.6rem;
+  color: var(--primary-color);
+}
+
+.card-title {
+  font-family: var(--font-family);
+  font-weight: 600;
+  font-size: 1.3rem;
+  color: var(--color-black);
+  margin-bottom: 14px;
+}
+
+.card-text {
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 0.98rem;
+  color: var(--text-color);
+  line-height: 1.6;
+  margin: 0;
+}
+
+@media (max-width: 991.98px) {
+  .title {
+    font-size: 2rem;
+  }
+  .force-card {
+    padding: 32px 24px;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .driving-force-section {
+    padding: 56px 0;
+  }
+  .title {
+    font-size: 1.6rem;
   }
 }

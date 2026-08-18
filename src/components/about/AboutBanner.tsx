@@ -1,8 +1,7 @@
 import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import Image from "next/image";
-
-
+import { FaTruck, FaHandshake, FaMapMarkerAlt } from "react-icons/fa";
 
 const aboutBadgeText = "#AboutSimcoCart";
 
@@ -28,14 +27,13 @@ const aboutParagraphs: { text: string; bold?: boolean }[][] = [
   ],
 ];
 
-const aboutStats: { icon: string; value: string; label: string }[] = [
-  { icon: "\uD83D\uDE9A", value: "10K+", label: "Happy Customers" },
-  { icon: "\uD83E\uDD1D", value: "500+", label: "Verified Sellers" },
-  { icon: "\uD83D\uDCCD", value: "50+", label: "Cities Served" },
+const aboutStats: { icon: React.ReactNode; value: string; label: string }[] = [
+  { icon: <FaTruck />, value: "10K+", label: "Happy Customers" },
+  { icon: <FaHandshake />, value: "500+", label: "Verified Sellers" },
+  { icon: <FaMapMarkerAlt />, value: "50+", label: "Cities Served" },
 ];
 
 const aboutHeroImage = "/assets/img/all-images/home/combo1.webp";
-
 
 const AboutBanner: React.FC = () => {
   return (
@@ -74,7 +72,6 @@ const AboutBanner: React.FC = () => {
               </p>
             ))}
 
-        
             <Row className="about-banner-stats g-3">
               {aboutStats.map((stat, index) => (
                 <Col xs={4} key={index} className="about-banner-stat">

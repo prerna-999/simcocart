@@ -47,7 +47,7 @@ const MissionVision: React.FC = () => {
             <Container>
                 <Row className="align-items-center gy-4">
 
-                    <Col xs={12} md={12} lg={6} xl={5} className="imageCol">
+                    <Col xs={12} md={12} lg={6} xl={6} className="imageCol">
                         <div className="imageWrapper">
                             <Image
                                 src={image.src}
@@ -61,7 +61,7 @@ const MissionVision: React.FC = () => {
                     </Col>
 
 
-                    <Col xs={12} md={12} lg={6} xl={7} className="textCol">
+                    <Col xs={12} md={12} lg={6} xl={6} className="textCol">
                         <h2 className="missionHeading">{heading}</h2>
                         <h3 className="missionSubheading">{subheading}</h3>
 
