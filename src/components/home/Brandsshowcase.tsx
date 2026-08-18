@@ -173,7 +173,7 @@ const BrandsShowcase: React.FC = () => {
   return (
     <section className="brands-showcase" aria-label="Brands showcase">
 
-      {/* <Container> */}
+      <Container>
           <div className="brands-showcase__header">
         <div className="brands-showcase__heading">
           <h2 className="brands-showcase__title">Brands Showcase</h2>
@@ -245,7 +245,7 @@ const BrandsShowcase: React.FC = () => {
           </div>
         </div>
       </div>
-      {/* </Container> */}
+      </Container>
     
     </section>
   );

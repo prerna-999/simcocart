@@ -85,7 +85,7 @@ export default function ProductListingLayout({
         />
       )}
 
-      {/* <Container> */}
+      <Container fluid>
         <div className="product-listing-body">
           <FilterPanel
             filters={productFilters}
@@ -98,7 +98,7 @@ export default function ProductListingLayout({
 
           <ProductGrid products={sortedProducts} />
         </div>
-      {/* </Container> */}
+      </Container>
     </div>
   );
 }

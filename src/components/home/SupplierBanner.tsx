@@ -97,7 +97,7 @@ const features: Feature[] = [
 const SupplierBanner: React.FC = () => {
   return (
     <section className="supplier-section">
-      {/* <Container> */}
+      <Container>
         <div className="supplier-banner-inner">
             <div className="supplier-content">
           <h2 className="supplier-heading">Register as a Simcocart Supplier</h2>
@@ -141,7 +141,7 @@ const SupplierBanner: React.FC = () => {
         </div>
         </div>
         
-      {/* </Container> */}
+      </Container>
     </section>
   );
 };
