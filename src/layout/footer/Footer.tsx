@@ -215,7 +215,7 @@ export default function Footer() {
             <ul className="linkList">
               {aboutLinks.map((item) => (
                 <li key={item}>
-                  <a href="#" className="footerLink">
+                  <a href="/about" className="footerLink">
                     {item}
                   </a>
                 </li>

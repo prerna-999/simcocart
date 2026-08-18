@@ -25,7 +25,7 @@ const TopHeader = () => {
   return (
     <div className="top-header-wrapper">
       <Row className="align-items-center top-header-row g-3">
-        {/* Hamburger - mobile only */}
+       
         <Col xs={1} className="d-lg-none">
           <button className="hamburger-btn" onClick={() => setShowMobileMenu(true)}>
             <FiMenu />
@@ -45,7 +45,7 @@ const TopHeader = () => {
           </Link>
         </Col>
 
-        {/* Location - hidden on mobile */}
+      
         <Col lg={2} className="d-none d-lg-block location-col">
           <div className="location-box">
             <FiMapPin className="location-icon" />
@@ -56,7 +56,6 @@ const TopHeader = () => {
           </div>
         </Col>
 
-        {/* Search bar with category */}
         <Col lg={4} className="d-none d-lg-block search-col">
           <div className="search-box">
             <div className="category-select" onClick={() => setShowCategory(!showCategory)}>
@@ -96,7 +95,7 @@ const TopHeader = () => {
           </div>
         </Col>
 
-        {/* Right icons */}
+       
         <Col xs={4} sm={4} md={4} lg={4} className="right-icons icons-col">
           <Link href="/become-seller" className="icon-item">
             <FiShoppingBag className="icon" />

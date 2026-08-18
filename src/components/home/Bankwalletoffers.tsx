@@ -166,7 +166,7 @@ const BankWalletOffers: React.FC = () => {
 
   return (
     <section className="offers-showcase" aria-label="Bank and wallet offers">
-      <Container>
+      {/* <Container> */}
           <div className="offers-showcase__header">
         <h2 className="offers-showcase__title">Bank &amp; Wallet Offers</h2>
 
@@ -234,7 +234,7 @@ const BankWalletOffers: React.FC = () => {
           ))}
         </div>
       </div>
-      </Container>
+      {/* </Container> */}
 
     </section>
   );

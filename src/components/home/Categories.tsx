@@ -180,7 +180,7 @@ const Categories: React.FC = () => {
 
   return (
     <section className="shop-cat-section">
-      <Container>
+      {/* <Container> */}
         <Row className="shop-cat-header align-items-center">
           <Col xs={8}>
             <h2 className="shop-cat-title">Shop by Categories</h2>
@@ -229,7 +229,7 @@ const Categories: React.FC = () => {
             </div>
           ))}
         </div>
-      </Container>
+      {/* </Container> */}
     </section>
   );
 };

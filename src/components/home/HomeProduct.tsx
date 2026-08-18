@@ -53,9 +53,9 @@ const products: Product[] = [
 
 const HomeProduct = () => {
   return (
-    <Container>
+    // <Container>
       <ProductListingLayout title="Products For You" products={products} />
-    </Container>
+    // </Container>
   );
 };
 

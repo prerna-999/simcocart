@@ -9,7 +9,7 @@ interface MobileMenuProps {
   onClose: () => void;
 }
 
-// Yahan har category ka apna link daal do
+
 const categories = [
   { name: "Electronics", link: "/category/electronics" },
   { name: "Fashion", link: "/category/fashion" },
@@ -41,7 +41,7 @@ const MobileMenu = ({ show, onClose }: MobileMenuProps) => {
           </button>
         </div>
 
-        {/* Search bar */}
+      
         <form className="mobile-menu-search" onSubmit={handleSearch}>
           <input
             type="text"

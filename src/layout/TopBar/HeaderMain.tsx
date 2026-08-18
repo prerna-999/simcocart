@@ -4,7 +4,6 @@ import { useState } from "react";
 import { Row, Col } from "react-bootstrap";
 import Link from "next/link";
 
-// ---------- Top horizontal nav ----------
 const navItems = [
   { label: "Best Sellers", href: "/best-sellers" },
   { label: "Mobiles", href: "/mobiles" },
@@ -21,7 +20,6 @@ const navItems = [
   { label: "Beauty & Personal Care", href: "/beauty-personal-care" },
 ];
 
-// ---------- Nested sidebar menu data ----------
 type MenuItem = {
   label: string;
   href?: string;
@@ -31,7 +29,7 @@ type MenuItem = {
 type MenuSection = {
   title: string;
   items: MenuItem[];
-  // items beyond this index are hidden behind "see more" (undefined = no truncation)
+ 
   visibleCount?: number;
 };
 
@@ -187,13 +185,10 @@ const HeaderMain = () => {
   const [showSidebar, setShowSidebar] = useState(false);
   const [isClosing, setIsClosing] = useState(false);
 
-  // navigation stack for nested panels
   const [panelStack, setPanelStack] = useState<MenuItem[]>([]);
 
-  // which sections are expanded ("see more" clicked) — keyed by section title
   const [expandedSections, setExpandedSections] = useState<Record<string, boolean>>({});
 
-  // drag-to-scroll state (top nav)
   const [isDragging, setIsDragging] = useState(false);
   const [startX, setStartX] = useState(0);
   const [scrollLeft, setScrollLeft] = useState(0);
@@ -320,7 +315,7 @@ const HeaderMain = () => {
               className="sidebar-track"
               style={{ transform: `translateX(-${panelStack.length * 100}%)` }}
             >
-              {/* Root panel */}
+          
               <div className="sidebar-panel-page">
                 <div className="sidebar-body">
                   {menuSections.map((section, idx) => {
@@ -355,7 +350,7 @@ const HeaderMain = () => {
                 </div>
               </div>
 
-              {/* Sub-panels */}
+            
               {panelStack.map((panelItem, depth) => (
                 <div key={panelItem.label + depth} className="sidebar-panel-page">
                   <button className="sidebar-back-btn" onClick={popPanel}>
