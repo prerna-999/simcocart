@@ -60,7 +60,7 @@ const helpLinks = [
   { text: "Refund and Returns Policy", href: "/refund-policy" },
   { text: "Privacy Policy", href: "/privacy-policy" },
   { text: "Terms and Conditions", href: "/terms-and-conditions" },
-  { text: "Cookie Settings", href: "/cookie-settings" },
+  { text: "Cookie Settings", href: "/cookie-setting" },
   { text: "Help Center", href: "/help-center" },
 ];
 
