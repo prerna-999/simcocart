@@ -189,25 +189,33 @@
 }
 
 .icon-item {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  color: var(--color-black);
-  text-decoration: none;
-  font-size: 14px;
-  font-weight: 500;
-  position: relative;
-  white-space: nowrap;
-  flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: var(--color-black);
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    position: relative;
+    white-space: nowrap;
+    flex-shrink: 0;
 }
 
 .icon-item:hover {
-  color: var(--primary-color);
+    color: var(--primary-color);
 }
 
 .icon {
-  font-size: 18px;
+  color: var(--color-black) !important;
+   height: 20px !important;
+   width: 20px !important;
+    
 }
+
+.icon-item:hover .icon {
+    color: var(--primary-color) !important;
+}
+
 
 .icon-badge {
   position: absolute;

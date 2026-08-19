@@ -51,37 +51,38 @@ const PaperPlaneIcon = ({ size = 16 }: { size?: number }) => (
   </svg>
 );
 
+
 const helpLinks = [
-  "Accessibility Statement",
-  "Your Orders",
-  "Returns & Replacements",
-  "Shipping Rates & Policies",
-  "Refund and Returns Policy",
-  "Privacy Policy",
-  "Terms and Conditions",
-  "Cookie Settings",
-  "Help Center",
+  { text: "Accessibility Statement", href: "/accessibility-statement" },
+  { text: "Your Orders", href: "/orders" },
+  { text: "Returns & Replacements", href: "/returns-replacements" },
+  { text: "Shipping Rates & Policies", href: "/shipping-policy" },
+  { text: "Refund and Returns Policy", href: "/refund-policy" },
+  { text: "Privacy Policy", href: "/privacy-policy" },
+  { text: "Terms and Conditions", href: "/terms-and-conditions" },
+  { text: "Cookie Settings", href: "/cookie-settings" },
+  { text: "Help Center", href: "/help-center" },
 ];
 
 const earnLinks = [
-  "Sell on Grogin",
-  "Sell Your Services on Grogin",
-  "Sell on Grogin Business",
-  "Sell Your Apps on Grogin",
-  "Become an Affiliate",
-  "Advertise Your Products",
-  "Sell-Publish with Us",
-  "Become an Blowwe Vendor",
+  { text: "Sell on Grogin", href: "/sell" },
+  { text: "Sell Your Services on Grogin", href: "/sell-services" },
+  { text: "Sell on Grogin Business", href: "/sell-business" },
+  { text: "Sell Your Apps on Grogin", href: "/sell-apps" },
+  { text: "Become an Affiliate", href: "/affiliate" },
+  { text: "Advertise Your Products", href: "/advertise" },
+  { text: "Sell-Publish with Us", href: "/sell-publish" },
+  { text: "Become an Blowwe Vendor", href: "/blowwe-vendor" },
 ];
 
 const aboutLinks = [
-  "Careers for Grogin",
-  "About Us",
-  "Investor Relations",
-  "Grogin Devices",
-  "Customer reviews",
-  "Social Responsibility",
-  "Store Locations",
+  { text: "Careers for Grogin", href: "/careers" },
+  { text: "About Us", href: "/about" },
+  { text: "Investor Relations", href: "/investor-relations" },
+  { text: "Grogin Devices", href: "/devices" },
+  { text: "Customer reviews", href: "/reviews" },
+  { text: "Social Responsibility", href: "/social-responsibility" },
+  { text: "Store Locations", href: "/store-locations" },
 ];
 
 const paymentBadges = [
@@ -96,10 +97,10 @@ const paymentBadges = [
 ];
 
 const socialIcons = [
-  { Icon: FacebookIcon, label: "Facebook" },
-  { Icon: InstagramIcon, label: "Instagram" },
-  { Icon: LinkedinIcon, label: "LinkedIn" },
-  { Icon: TwitterIcon, label: "Twitter" },
+  { Icon: FacebookIcon, label: "Facebook", href: "https://facebook.com" },
+  { Icon: InstagramIcon, label: "Instagram", href: "https://instagram.com" },
+  { Icon: LinkedinIcon, label: "LinkedIn", href: "https://linkedin.com" },
+  { Icon: TwitterIcon, label: "Twitter", href: "https://twitter.com" },
 ];
 
 export default function Footer() {
@@ -144,7 +145,7 @@ export default function Footer() {
               </div>
               <p className="consentText">
                 By subscribing you agree to our{" "}
-                <a href="#" className="link">
+                <a href="/terms-and-conditions" className="link">
                   Terms &amp; Conditions and Privacy &amp; Cookies Policy.
                 </a>
               </p>
@@ -169,7 +170,11 @@ export default function Footer() {
               </span>
               <div>
                 <p className="contactLabel">24 X7</p>
-                <p className="contactValue">1 800 300-353</p>
+                <p className="contactValue">
+                  <a href="tel:1800300353" className="footerLink">
+                    1 800 300-353
+                  </a>
+                </p>
               </div>
             </div>
 
@@ -179,7 +184,11 @@ export default function Footer() {
               </span>
               <div>
                 <p className="contactLabel">Need help with your order?</p>
-                <p className="contactValue">info@example.com</p>
+                <p className="contactValue">
+                  <a href="mailto:info@example.com" className="footerLink">
+                    info@example.com
+                  </a>
+                </p>
               </div>
             </div>
           </Col>
@@ -188,22 +197,22 @@ export default function Footer() {
             <h4 className="columnTitle">Make Money with Us</h4>
             <ul className="linkList">
               {earnLinks.map((item) => (
-                <li key={item}>
-                  <a href="#" className="footerLink">
-                    {item}
+                <li key={item.text}>
+                  <a href={item.href} className="footerLink">
+                    {item.text}
                   </a>
                 </li>
               ))}
             </ul>
           </Col>
 
-          <Col xs={12} sm={6} lg={3} className="column">
+          <Col xs={12} sm={6} lg={2} className="column">
             <h4 className="columnTitle">Let Us Help You</h4>
             <ul className="linkList">
               {helpLinks.map((item) => (
-                <li key={item}>
-                  <a href="#" className="footerLink">
-                    {item}
+                <li key={item.text}>
+                  <a href={item.href} className="footerLink">
+                    {item.text}
                   </a>
                 </li>
               ))}
@@ -214,20 +223,23 @@ export default function Footer() {
             <h4 className="columnTitle">Get to Know Us</h4>
             <ul className="linkList">
               {aboutLinks.map((item) => (
-                <li key={item}>
-                  <a href="/about" className="footerLink">
-                    {item}
+                <li key={item.text}>
+                  <a href={item.href} className="footerLink">
+                    {item.text}
                   </a>
                 </li>
               ))}
             </ul>
           </Col>
 
-          <Col xs={12} sm={6} lg={2} className="column">
+          <Col xs={12} sm={6} lg={3} className="column">
             <h4 className="columnTitle">Download our app</h4>
 
             <div className="appRow">
-              <a href="#" className="storeBadge">
+              <a
+                href="https://play.google.com/store"
+                className="storeBadge"
+              >
                 <span className="storeBadgeIconGoogle">
                   <PlayTriangleIcon size={18} />
                 </span>
@@ -238,13 +250,16 @@ export default function Footer() {
               </a>
               <span className="appDiscount">
                 Download App Get
-                <br />
+               
                 -10% Discount
               </span>
             </div>
 
             <div className="appRow">
-              <a href="#" className="storeBadge">
+              <a
+                href="https://apps.apple.com"
+                className="storeBadge"
+              >
                 <span className="storeBadgeIconApple"></span>
                 <span className="storeBadgeText">
                   <span className="storeBadgeSmall">Download on the</span>
@@ -253,17 +268,18 @@ export default function Footer() {
               </a>
               <span className="appDiscount">
                 Download App Get
-                <br />
                 -20% Discount
               </span>
             </div>
 
             <h4 className="followTitle">Follow us on social media:</h4>
             <div className="socialRow">
-              {socialIcons.map(({ Icon, label }) => (
+              {socialIcons.map(({ Icon, label, href }) => (
                 <a
                   key={label}
-                  href="#"
+                  href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   aria-label={label}
                   className="socialIcon"
                 >
@@ -297,13 +313,13 @@ export default function Footer() {
 
           <Col xs={12} lg="auto">
             <div className="bottomLinks">
-              <a href="#" className="bottomLink">
+              <a href="/terms-and-conditions" className="bottomLink">
                 Terms and Conditions
               </a>
-              <a href="#" className="bottomLink">
+              <a href="/privacy-policy" className="bottomLink">
                 Privacy Policy
               </a>
-              <a href="#" className="bottomLink">
+              <a href="/returns-replacements" className="bottomLink">
                 Returns Policy
               </a>
             </div>
