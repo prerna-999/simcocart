@@ -65,7 +65,7 @@ const helpLinks = [
 ];
 
 const earnLinks = [
-  { text: "Sell on Grogin", href: "/sell" },
+  { text: "Sell on SimcoCart", href: "/sell" },
   { text: "Sell Your Services on Grogin", href: "/sell-services" },
   { text: "Sell on Grogin Business", href: "/sell-business" },
   { text: "Sell Your Apps on Grogin", href: "/sell-apps" },
