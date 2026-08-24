@@ -45,7 +45,7 @@ const SellSimcoCartBanner: React.FC = () => {
               warehouse, no showroom, no minimum stock — just your products and our customers.
             </p>
             <div className="hero-ctas">
-              <button className="btn-primary">
+              <button className="sell-btn">
                 Start Selling — It&apos;s Free <FiArrowRight />
               </button>
               <button className="btn-ghost">Watch how it works</button>

@@ -118,7 +118,6 @@ export default function AuthPage({
             <div className="auth-card">
              
               <div className="auth-card-body">
-                {/* Underline tabs */}
                 <div className="auth-tabs">
                   {tabs.map((tab) => (
                     <button

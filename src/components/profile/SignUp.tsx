@@ -131,7 +131,7 @@ export default function SignupForm({
         </label>
       </div>
 
-      <button type="submit" className="btn-primary" disabled={loading}>
+      <button type="submit" className="login-btn" disabled={loading}>
         {loading ? "Creating account..." : "Create account"}
       </button>
     </form>

@@ -98,7 +98,7 @@
     margin-top: 30px;
 }
 
-.btn-primary {
+.sell-btn{
     background: var(--color-black);
     color: #fff;
     padding: 15px 30px;
@@ -113,7 +113,7 @@
     transition: transform .15s ease;
 }
 
-.btn-primary:hover {
+.sell-btn:hover {
     transform: translateY(-2px);
 }
 
@@ -529,8 +529,6 @@
 
 .plans .sec-head {
     text-align: center;
-    max-width: 600px;
-    margin: 0 auto 50px;
 }
 
 .plans .sec-eyebrow {
@@ -1111,8 +1109,20 @@
     position: relative;
 }
 
-.btn-primary-cta {
-    background: var(--primary-color);
+.sell-register {
+      background: var(--primary-color);
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 40px;
+    font-weight: 600;
+    font-size: 15px;
+    border: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    transition: transform .15s ease;
+    margin-top: 20px;
 }
 
 @media (max-width: 991px) {

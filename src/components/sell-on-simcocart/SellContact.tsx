@@ -13,7 +13,7 @@ const SellContact: React.FC = () => {
               <p>Registration takes about 15 minutes. Most sellers go live within a week.</p>
             </Col>
             <Col lg={4} md={12} className="final-cta-btn-col">
-              <button className="btn-primary btn-primary-cta">
+              <button className="sell-register">
                 Register as a Seller <FiArrowRight />
               </button>
             </Col>

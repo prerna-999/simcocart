@@ -68,9 +68,9 @@ const Plans: React.FC = () => {
           <h2>Pick a plan that fits your catalogue</h2>
           <p>No setup fees on any plan. Switch or cancel anytime from your Seller Hub.</p>
         </div>
-        <Row className="plans-row">
+        <Row>
           {plans.map((plan) => (
-            <Col lg={4} md={6} sm={12} className="plans-col" key={plan.id}>
+            <Col lg={4} md={6} sm={12} className="mt-30" key={plan.id}>
               <div className={`plan-card ${plan.featured ? "plan-card-featured" : ""}`}>
                 {plan.featured && <span className="plan-tag">Most Popular</span>}
                 <h3>{plan.name}</h3>

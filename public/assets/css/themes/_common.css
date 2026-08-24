@@ -15,6 +15,7 @@
     --box-shadow-2: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
     --hero-gradient: linear-gradient(135deg, #AE628F 0%,#F54C50 100%);
     --glass-bg: rgba(255, 255, 255, 0.85);
+    --border-color:#e7e9f0;
 }
 .fs-16px {
     font-size: 16px !important;
