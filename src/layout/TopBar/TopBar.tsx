@@ -109,7 +109,7 @@ const TopHeader = () => {
             <FiShoppingCart className="icon" />
             <span className="d-none d-lg-inline">Cart</span>
           </Link>
-          <Link href="/login" className="icon-item d-none d-lg-flex">
+          <Link href="/profile/" className="icon-item d-none d-lg-flex">
             <FiUser className="icon" />
             <span>Login</span>
           </Link>

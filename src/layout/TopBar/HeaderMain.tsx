@@ -176,7 +176,7 @@ const menuSections: MenuSection[] = [
     items: [
       { label: "Your Account", href: "/account" },
       { label: "Customer Service", href: "/customer-service" },
-      { label: "Sign in", href: "/sign-in" },
+      { label: "Sign in", href: "/profile/" },
     ],
   },
 ];

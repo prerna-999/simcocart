@@ -3,7 +3,7 @@ import WhySell from "./WhySell";
 import HowItWorks from "./HowItWorks";
 import Categories from "./Categories";
 import Plans from "./Plans";
-// import SellTestimonials from "./SellTestimonials";
+import SellTestimonials from "./SellTestimonials";
 import SellFaq from "./SellFaq";
 import SellContact from "./SellContact";
 const SellSimcoCartPage =() =>{
@@ -14,7 +14,7 @@ const SellSimcoCartPage =() =>{
         <HowItWorks/>
         <Categories/>
         <Plans/>
-        {/* <SellTestimonials/> */}
+        <SellTestimonials/>
         <SellFaq/>
         <SellContact/>
         </>

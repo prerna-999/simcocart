@@ -5,4 +5,5 @@
 @import './banner.css';
 @import './_pages.css';
 @import './_help.css';
-@import './sell.css'
+@import './sell.css';
+@import "./profile.css";

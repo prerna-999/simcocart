@@ -69,7 +69,7 @@ const MobileMenu = ({ show, onClose }: MobileMenuProps) => {
         </div>
         <ul className="mobile-menu-list">
           <li>
-            <Link href="/login" onClick={onClose}>
+            <Link href="/profile/" onClick={onClose}>
               <FaUser className="me-2" /> Login
             </Link>
           </li>
