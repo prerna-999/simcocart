@@ -3,6 +3,7 @@ import { Product } from '@/components/hooks/useProductFilters';
 export const HomeProducts: Product[] = [
   {
     id: '1',
+    slug: 'chitrarekha-attractive-kurti-set',
     title: 'Chitrarekha Attractive kurti set',
     category: 'Suits',
     price: 194,
@@ -12,9 +13,11 @@ export const HomeProducts: Product[] = [
     imageUrl: '/assets/img/all-images/home/combo1.webp',
     sellerName: 'GoPro',
     reviewCount: 10,
+    description: 'An elegant kurti set with graceful print work, comfortable fabric, and a flattering fit for everyday ethnic wear.An elegant kurti set with graceful print work, comfortable fabric, and a flattering fit for everyday ethnic wear.An elegant kurti set with graceful print work, comfortable fabric, and a flattering fit for everyday ethnic wear.',
   },
   {
     id: '2',
+    slug: 'sti-mens-shirts',
     title: "STI Men's shirts",
     category: 'Shirts',
     gender: 'men',
@@ -23,9 +26,11 @@ export const HomeProducts: Product[] = [
     imageUrl: '/assets/img/all-images/home/combo1.webp',
     sellerName: 'GoPro',
     reviewCount: 10,
+    description: 'A smart-casual shirt crafted from breathable fabric, tailored for a neat fit that suits both work and outings.A smart-casual shirt crafted from breathable fabric, tailored for a neat fit that suits both work and outings.A smart-casual shirt crafted from breathable fabric, tailored for a neat fit that suits both work and outings.',
   },
   {
     id: '3',
+    slug: 'pretty-graceful-women-tshirt',
     title: 'Pretty Graceful Women T-Shirt',
     category: 'T Shirts',
     gender: 'women',
@@ -35,9 +40,11 @@ export const HomeProducts: Product[] = [
     imageUrl: '/assets/img/all-images/home/combo1.webp',
     sellerName: 'GoPro',
     reviewCount: 10,
+    description: 'A soft, breathable everyday tee with a relaxed fit and a chic, understated print.A smart-casual shirt crafted from breathable fabric, tailored for a neat fit that suits both work and outings.A smart-casual shirt crafted from breathable fabric, tailored for a neat fit that suits both work and outings.',
   },
   {
     id: '4',
+    slug: 'relaxed-fashionable-men-slippers',
     title: 'Relaxed Fashionable Men Slippers',
     category: 'Slippers',
     gender: 'men',
@@ -46,5 +53,6 @@ export const HomeProducts: Product[] = [
     imageUrl: '/assets/img/all-images/home/combo1.webp',
     sellerName: 'GoPro',
     reviewCount: 10,
+    description: 'Lightweight, cushioned slippers designed for all-day comfort at home or on casual outings. A smart-casual shirt crafted from breathable fabric, tailored for a neat fit that suits both work and outings.A smart-casual shirt crafted from breathable fabric, tailored for a neat fit that suits both work and outings.',
   },
 ];
