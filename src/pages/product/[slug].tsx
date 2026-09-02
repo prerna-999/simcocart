@@ -4,6 +4,7 @@ import { Container } from 'react-bootstrap';
 import { Star, ShoppingCart, Heart, Truck, ShieldCheck, RotateCcw } from 'lucide-react';
 import { allProducts, getProductBySlug } from '@/data/allProducts';
 import { Product } from '@/components/hooks/useProductFilters';
+import YouMayAlsoLike from '@/components/comman/ProductCard/Like';
 
 interface ProductDetailPageProps {
   product: Product;
@@ -139,6 +140,8 @@ const ProductDetailPage: React.FC<ProductDetailPageProps> = ({ product }) => {
             </div>
           </div>
         </div>
+
+        <YouMayAlsoLike currentProduct={product} allProducts={allProducts} />
       </Container>
     </div>
   );
