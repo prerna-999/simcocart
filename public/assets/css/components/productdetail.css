@@ -385,8 +385,7 @@
     }
 }
 
-/* You May Also Like — add to your global stylesheet (same place
-   product-detail-* styles live). Uses only the existing :root tokens. */
+/* You May Also Like  */
 
 .you-may-also-like {
   margin-top: 56px;
