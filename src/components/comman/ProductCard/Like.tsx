@@ -9,11 +9,8 @@ interface YouMayAlsoLikeProps {
   maxItems?: number;
 }
 
-/**
- * "You May Also Like" rail for the single product page.
- * Reuses the existing <ProductCard /> so every card matches the
- * rest of the site (Products For You grid, category pages, etc).
- */
+const normalize = (val?: string) => (val ?? '').toString().trim().toLowerCase();
+
 const YouMayAlsoLike: React.FC<YouMayAlsoLikeProps> = ({
   currentProduct,
   allProducts,
@@ -21,13 +18,18 @@ const YouMayAlsoLike: React.FC<YouMayAlsoLikeProps> = ({
 }) => {
   const scrollerRef = useRef<HTMLDivElement>(null);
 
-  const related = allProducts
-    .filter(
-      (p) =>
-        p.slug !== currentProduct.slug &&
-        p.category === currentProduct.category
-    )
-    .slice(0, maxItems);
+  const sameCategory = allProducts.filter(
+    (p) =>
+      p.slug !== currentProduct.slug &&
+      normalize(p.category) === normalize(currentProduct.category)
+  );
+
+  const fallback = allProducts.filter((p) => p.slug !== currentProduct.slug);
+
+  const related = (sameCategory.length > 0 ? sameCategory : fallback).slice(
+    0,
+    maxItems
+  );
 
   if (related.length === 0) return null;
 
