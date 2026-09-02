@@ -66,23 +66,16 @@ const helpLinks = [
 
 const earnLinks = [
   { text: "Sell on SimcoCart", href: "/sell" },
-  { text: "Sell Your Services on SimcoCart", href: "/sell-services" },
-  { text: "Sell on SimcoCart Business", href: "/sell-business" },
-  { text: "Sell Your Apps on SimcoCart", href: "/sell-apps" },
   { text: "Become an Affiliate", href: "/affiliate" },
   { text: "Advertise Your Products", href: "/advertise" },
-  { text: "Sell-Publish with Us", href: "/sell-publish" },
-  { text: "Become an Blowwe Vendor", href: "/blowwe-vendor" },
 ];
 
 const aboutLinks = [
   { text: "Careers for SimcoCart", href: "/careers" },
   { text: "About Us", href: "/about" },
   { text: "Investor Relations", href: "/investor-relations" },
-  { text: "SimcoCart Devices", href: "/devices" },
   { text: "Customer reviews", href: "/reviews" },
   { text: "Social Responsibility", href: "/social-responsibility" },
-  { text: "Store Locations", href: "/store-locations" },
 ];
 
 const paymentBadges = [
