@@ -1,6 +1,8 @@
+
 import React, { useState } from "react";
 import { Container } from "react-bootstrap";
 import { FiPlus } from "react-icons/fi";
+
 
 interface FaqItem {
   id: number;
@@ -42,27 +44,40 @@ const SellFaq: React.FC = () => {
     setOpenId((prev) => (prev === id ? 0 : id));
   };
 
+  const handleKeyDown = (e: React.KeyboardEvent, id: number) => {
+    if (e.key === "Enter" || e.key === " ") {
+      e.preventDefault();
+      toggleItem(id);
+    }
+  };
+
   return (
-    <section className="faq bg-2">
+    <section className="sf-faq sf-faq-bg-2">
       <Container>
-        <div className="sec-head">
-          <div className="sec-eyebrow">Questions</div>
+        <div className="sf-faq-sec-head">
+          <div className="sf-faq-eyebrow">Questions</div>
           <h2>Before you sign up</h2>
         </div>
-        <div className="faq-list">
+        <div className="sf-faq-list">
           {faqItems.map((item) => (
             <div
-              className={`faq-item ${openId === item.id ? "faq-item-open" : ""}`}
+              className={`sf-faq-item ${
+                openId === item.id ? "sf-faq-item-open" : ""
+              }`}
               key={item.id}
+              role="button"
+              tabIndex={0}
+              aria-expanded={openId === item.id}
               onClick={() => toggleItem(item.id)}
+              onKeyDown={(e) => handleKeyDown(e, item.id)}
             >
-              <div className="faq-q">
+              <div className="sf-faq-q">
                 {item.question}
-                <span className="faq-plus">
+                <span className="sf-faq-plus">
                   <FiPlus />
                 </span>
               </div>
-              <div className="faq-a">{item.answer}</div>
+              <div className="sf-faq-a">{item.answer}</div>
             </div>
           ))}
         </div>
