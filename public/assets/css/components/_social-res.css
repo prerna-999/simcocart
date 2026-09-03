@@ -1,0 +1,364 @@
+/* ============================================================
+   Social Responsibility page — full stylesheet
+   Replace the ENTIRE contents of _socail-res.css with this file.
+   ============================================================ */
+
+/* ---------- Banner ---------- */
+
+.sr-banner {
+  background: var(--hero-gradient);
+  padding: 64px 24px 56px;
+  color: var(--color-white);
+}
+
+.sr-banner-inner {
+  max-width: 1080px;
+  margin: 0 auto;
+}
+
+.sr-breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  opacity: 0.85;
+  margin-bottom: 28px;
+}
+
+.sr-breadcrumb a {
+  color: var(--color-white);
+  text-decoration: none;
+}
+
+.sr-eyebrow {
+  font-size: 15px;
+  margin-bottom: 12px;
+  opacity: 0.9;
+}
+
+.sr-heading {
+  font-family: var(--font-family);
+  font-size: 42px;
+  font-weight: 600;
+  line-height: 1.15;
+  max-width: 640px;
+  margin-bottom: 16px;
+}
+
+.sr-subheading {
+  font-size: 17px;
+  line-height: 1.6;
+  max-width: 560px;
+  opacity: 0.92;
+  margin-bottom: 40px;
+}
+
+.sr-stat-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  padding-top: 32px;
+  border-top: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+.sr-stat-item {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.sr-stat-value {
+  font-size: 26px;
+  font-weight: 600;
+}
+
+.sr-stat-label {
+  font-size: 13px;
+  line-height: 1.4;
+  opacity: 0.85;
+  margin: 0;
+}
+
+/* ---------- Sections (shared) ---------- */
+
+.sr-section {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 64px 24px;
+}
+
+.sr-section-alt {
+  max-width: none;
+  background: var(--bg-2);
+}
+
+.sr-section-alt2 {
+  max-width: none;
+  background: #fff !important;
+}
+
+.sr-section-alt > * {
+  max-width: 1080px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.sr-section-head {
+  max-width: 620px;
+  margin-bottom: 40px;
+}
+
+.sr-section-title {
+  font-family: var(--font-family);
+  font-size: 28px;
+  font-weight: 600;
+  color: var(--color-6);
+  margin-bottom: 12px;
+}
+
+.sr-section-copy {
+  color: var(--text-color);
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+/* ---------- Section 1: Card grid ---------- */
+
+.sr-card-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.sr-card {
+  background: var(--bg-white);
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  padding: 28px 24px;
+}
+
+.sr-card-marker {
+  display: block;
+  width: 32px;
+  height: 4px;
+  border-radius: 2px;
+  margin-bottom: 20px;
+}
+
+.sr-card-title {
+  font-size: 17px;
+  font-weight: 600;
+  color: var(--color-6);
+  margin-bottom: 10px;
+}
+
+.sr-card-copy {
+  color: var(--text-color);
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+/* ---------- Section 2: Impact grid ---------- */
+
+.sr-impact-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.sr-impact-card {
+  background: var(--bg-white);
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  padding: 28px 24px;
+}
+
+.sr-impact-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  color: var(--color-white);
+  margin-bottom: 20px;
+}
+
+.sr-impact-icon svg {
+  width: 20px;
+  height: 20px;
+}
+
+.sr-impact-icon--color-1 {
+  background: var(--color-1);
+}
+
+.sr-impact-icon--color-2 {
+  background: var(--color-2);
+}
+
+.sr-impact-icon--color-4 {
+  background: var(--color-4);
+}
+
+.sr-impact-badge {
+  font-family: var(--font-family);
+  font-size: 28px;
+  font-weight: 600;
+  color: var(--primary-color);
+  margin-bottom: 12px;
+}
+
+.sr-impact-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--color-6);
+  margin-bottom: 8px;
+}
+
+.sr-impact-copy {
+  color: var(--text-color);
+  font-size: 14px;
+  line-height: 1.7;
+}
+/* Section 3 - commitment card grid (replaces sr-split-layout / sr-check-list) */
+
+.sr-commit-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.sr-commit-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  background: var(--bg-white);
+  border-radius: 10px;
+  padding: 24px;
+  box-shadow: var(--box-shadow-2);
+}
+
+.sr-commit-mark {
+  flex-shrink: 0;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--color-4);
+  color: var(--color-white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+}
+
+.sr-commit-title {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--color-6);
+  margin-bottom: 6px;
+}
+
+.sr-commit-copy {
+  color: var(--text-color);
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+@media (max-width: 640px) {
+  .sr-commit-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ---------- Section 4: Stat row + CTA banner ---------- */
+
+.sr-diversity-row {
+  display: grid;
+  grid-template-columns: 140px 1fr;
+  gap: 32px;
+  align-items: start;
+  margin-bottom: 40px;
+}
+
+.sr-diversity-stat {
+  font-family: var(--font-family);
+  font-size: 48px;
+  font-weight: 600;
+  color: var(--primary-color);
+}
+
+.sr-cta-banner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  background: var(--color-6);
+  border-radius: 12px;
+  padding: 36px 40px;
+  box-shadow: var(--box-shadow-2);
+}
+
+.sr-cta-title {
+  color: var(--color-white);
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.sr-cta-copy {
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 14px;
+  max-width: 420px;
+}
+
+.sr-cta-button {
+  flex-shrink: 0;
+  background: var(--primary-color);
+  color: var(--color-white);
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 12px 24px;
+  border-radius: 8px;
+  white-space: nowrap;
+}
+
+/* ---------- Responsive ---------- */
+
+@media (max-width: 860px) {
+  .sr-stat-row {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .sr-card-grid,
+  .sr-impact-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .sr-split-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .sr-cta-banner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 640px) {
+  .sr-diversity-row {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+}
+
+@media (max-width: 520px) {
+  .sr-heading {
+    font-size: 30px;
+  }
+
+  .sr-stat-row {
+    grid-template-columns: 1fr;
+  }
+}
